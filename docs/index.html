@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EVA Matrix - Enterprise Virtual Assistant built by AI agents. Watch us build an airplane while flying it.">
+    <title>EVA Matrix - AI-Generated Open Source Roadmap</title>
+    <style>
+        :root {
+            --primary: #0078d4;
+            --secondary: #50e6ff;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --success: #107c10;
+            --warning: #ff8c00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #005a9e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #005a9e 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .roadmap {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .milestone {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .milestone h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .milestone .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .milestone ul {
+            margin-left: 1.5rem;
+        }
+        
+        .milestone ul li {
+            margin: 0.5rem 0;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .status.on-track { background: #d3f3d3; color: var(--success); }
+        .status.in-progress { background: #fff4ce; color: var(--warning); }
+        .status.complete { background: #d3f3d3; color: var(--success); }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .cta {
+            background: var(--success);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta:hover {
+            background: #0e6b0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 EVA Matrix</h1>
+        <p class="tagline">"Building an airplane while flying it"</p>
+        <p>Enterprise Virtual Assistant - AI-Generated Open Source Platform</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#progress">Live Progress</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="https://github.com/MarcoPolo483" target="_blank">GitHub Org →</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="overview">
+            <h2>🎯 What is EVA Matrix?</h2>
+            <p><strong>EVA (Enterprise Virtual Assistant)</strong> is an AI-powered platform built by AI agents, following Canada's responsible AI guidelines (FASTER principles).</p>
+            
+            <p>Unlike traditional software development, <strong>EVA Matrix is built transparently in public</strong>:</p>
+            <ul>
+                <li>✅ <strong>17 repositories</strong> orchestrated by AI agents (github, ai2, windowsGuy)</li>
+                <li>✅ <strong>AI-generated code</strong> with human oversight (80% test coverage, WCAG 2.1 AA)</li>
+                <li>✅ <strong>Open source governance</strong> (segregation of duties, quality gates, audit trails)</li>
+                <li>✅ <strong>Enterprise-grade</strong> (Azure infrastructure, Entra ID auth, bilingual en-US/fr-FR)</li>
+            </ul>
+            
+            <p><strong>The Secret Sauce?</strong> Transparency. While others hide their AI development process, we build in public—showing every sprint, every tool, every lesson learned.</p>
+            
+            <a href="#roadmap" class="cta">See the Roadmap</a>
+        </section>
+        
+        <section id="progress">
+            <h2>📊 Live Progress Tracker</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="number">409</span>
+                    <span class="label">Days to Beta Go-Live<br>(Q4 2026)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">Sprint 01</span>
+                    <span class="label">Current Sprint<br>Day 1 of 14</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">0 / 30 SP</span>
+                    <span class="label">Sprint Burn-Down<br>(Week 1 Target: 13 SP)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">22 Epics</span>
+                    <span class="label">Total Backlog<br>~1,213 Story Points</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">17 Repos</span>
+                    <span class="label">Orchestrated by AI<br>(Core, API, UI, Infra)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">3 Agents</span>
+                    <span class="label">Dev Team<br>(SM, ai2, windowsGuy)</span>
+                </div>
+            </div>
+            
+            <h3>🏆 Recent Milestones</h3>
+            <ul>
+                <li>✅ Sprint 01 Plan Complete (Nov 17, 2025)</li>
+                <li>✅ Backlog Status Comprehensive Inventory (Nov 17)</li>
+                <li>✅ Power BI Agile Metrics Dashboard Design (Nov 17)</li>
+                <li>✅ EVA Agile Command Team Onboarding (1/3 complete)</li>
+                <li>✅ Segregation of Duties: SM/QA Toolbox + Dev Toolbox (Nov 17)</li>
+                <li>✅ Canada AI Guidelines Compliance Mapping (Nov 17)</li>
+            </ul>
+            
+            <p><em>Updates automatically refreshed hourly (Sprint 01 Week 2+)</em></p>
+        </section>
+        
+        <section id="roadmap">
+            <h2>🗓️ Roadmap - Watch Us Build</h2>
+            <div class="roadmap">
+                <div class="milestone">
+                    <h3>Q1 2026: Foundation <span class="status in-progress">In Progress</span></h3>
+                    <p class="date">Sprints 1-5 (~10 weeks) | January 31 - March 31, 2026</p>
+                    <ul>
+                        <li><strong>Power BI Analytics</strong> (Sprint 01): Command Center, Space Dashboard, Learning Analytics</li>
+                        <li><strong>Infrastructure Landing Zone</strong> (Sprint 02-03): VNet, Key Vault, APIM, Monitoring</li>
+                        <li><strong>Authentication & Authorization</strong> (Sprint 04-05): Entra ID, RBAC, tenant isolation</li>
+                        <li><strong>Metrics & Telemetry</strong> (Sprint 05): Event pipeline, cost calculation, usage tracking</li>
+                    </ul>
+                    <p><strong>Demo Checkpoints:</strong> Jan 31, Feb 28, Mar 31</p>
+                </div>
+                
+                <div class="milestone">
+                    <h3>Q2 2026: Platform Alpha <span class="status on-track">On Track</span></h3>
+                    <p class="date">Sprints 6-10 (~10 weeks) | April 1 - June 30, 2026</p>
+                    <ul>
+                        <li><strong>Agent Core</strong> (Sprint 06-08): Planner/executor loop, tool registry, memory</li>
+                        <li><strong>RAG Foundations</strong> (Sprint 08-09): Ingest, chunking, hybrid search, citations</li>
+                        <li><strong>MCP Integration</strong> (Sprint 09-10): Client + servers (azure, sharepoint, search, tools)</li>
+                    </ul>
+                    <p><strong>Demo Checkpoints:</strong> Apr 30, May 31, Jun 30</p>
+                </div>
+                
+                <div class="milestone">
+                    <h3>Q3 2026: Enterprise Beta <span class="status on-track">On Track</span></h3>
+                    <p class="date">Sprints 11-20 (~20 weeks) | July 1 - September 30, 2026</p>
+                    <ul>
+                        <li><strong>Safety & Compliance</strong> (Sprint 11-12): Pre/post filters, moderation, injection defense</li>
+                        <li><strong>API & UI</strong> (Sprint 13-15): REST/GraphQL, SSE/WebSockets, accessible chat interface</li>
+                        <li><strong>Live Ops</strong> (Sprint 16-18): Dashboard, quota management, feature flags</li>
+                        <li><strong>i18n & i11y</strong> (Sprint 19-20): Catalog management (en-US, fr-FR), accessibility library</li>
+                    </ul>
+                    <p><strong>Demo Checkpoints:</strong> Jul 31, Aug 31, Sep 30</p>
+                </div>
+                
+                <div class="milestone">
+                    <h3>Q4 2026: Production Go-Live <span class="status on-track">On Track</span></h3>
+                    <p class="date">Sprints 21-30 (~20 weeks) | October 1 - December 31, 2026</p>
+                    <ul>
+                        <li><strong>Metering & Billing</strong> (Sprint 21-23): Cost calculation, quota enforcement, tenant limits</li>
+                        <li><strong>Integration Tests</strong> (Sprint 24-26): End-to-end scenarios, performance benchmarks</li>
+                        <li><strong>Seed Scripts</strong> (Sprint 27-28): Cosmos, Search, catalogs, tenants</li>
+                        <li><strong>Enterprise Package</strong> (Sprint 29-30): Version BOM, one-click deploy, CloneMe PoC</li>
+                    </ul>
+                    <p><strong>Demo Checkpoints:</strong> Oct 31, Nov 30, <strong>Dec 31 (Beta Go-Live!)</strong></p>
+                </div>
+                
+                <div class="milestone">
+                    <h3>2027+: Moonshots 🌙 <span class="status on-track">Planned</span></h3>
+                    <p class="date">Sprints 31+ | 2027 and beyond</p>
+                    <ul>
+                        <li><strong>CloneMe Full M365 Integration</strong>: SharePoint, Teams, Outlook, OneDrive orchestration</li>
+                        <li><strong>EVA Vision Plugin</strong>: Image understanding, OCR, diagram analysis</li>
+                        <li><strong>OS Integration</strong>: Windows/macOS system controls, file operations</li>
+                        <li><strong>Multi-Agent Workflows</strong>: Specialized agents (research, code, design) collaborating</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dashboard">
+            <h2>📈 Public Dashboard</h2>
+            <p>Real-time progress tracking powered by Power BI. This dashboard shows high-level sprint metrics and milestone progress.</p>
+            <p><em>Power BI embed will be added in Sprint 01 Week 2 (Nov 24-30, 2025)</em></p>
+            
+            <div style="background: var(--light); padding: 2rem; text-align: center; border-radius: 8px; margin-top: 1rem;">
+                <p style="color: #666;">🚧 Dashboard Coming Soon 🚧</p>
+                <p style="font-size: 0.9rem; color: #999;">Sprint 01 Week 2: Power BI EVA Matrix dashboard</p>
+            </div>
+        </section>
+        
+        <section id="methodology">
+            <h2>🏗️ How We Build</h2>
+            <h3>EVA Agile Command Team</h3>
+            <ul>
+                <li><strong>Product Owner:</strong> Marco Presta (vision, roadmap, priorities, go/no-go decisions)</li>
+                <li><strong>Scrum Master & QA Master:</strong> GitHub Copilot (ceremonies, quality gates, sprint management)</li>
+                <li><strong>Dev Master (Performance):</strong> ai2 (RAG, scheduler, agent runtime)</li>
+                <li><strong>Dev Master (Compatibility):</strong> windowsGuy (safety, diagnostics, infrastructure)</li>
+            </ul>
+            
+            <h3>Quality Standards</h3>
+            <ul>
+                <li>✅ <strong>80% test coverage</strong> (unit + integration tests required)</li>
+                <li>✅ <strong>&lt;300ms P95 latency</strong> (API response time target)</li>
+                <li>✅ <strong>WCAG 2.1 AA accessibility</strong> (keyboard navigation, screen readers)</li>
+                <li>✅ <strong>Bilingual support</strong> (en-US, fr-FR parity)</li>
+                <li>✅ <strong>Canada AI Guidelines compliance</strong> (FASTER principles: Fair, Accountable, Secure, Transparent, Educated, Relevant)</li>
+            </ul>
+            
+            <h3>Tools & Governance</h3>
+            <ul>
+                <li><strong>SM/QA Toolbox:</strong> Ceremony automation, quality gates, metrics (segregation of duties)</li>
+                <li><strong>Dev Toolbox:</strong> Feature automation, git workflows, test verification</li>
+                <li><strong>Definition of Done:</strong> Lint pass, tests pass, coverage ≥80%, security scan, docs complete</li>
+                <li><strong>Sprint Cadence:</strong> 1-2 weeks, daily stand-ups, retrospectives</li>
+            </ul>
+        </section>
+        
+        <section id="philosophy">
+            <h2>💡 Our Philosophy</h2>
+            <blockquote style="border-left: 4px solid var(--primary); padding-left: 1rem; font-style: italic; color: #666;">
+                "We are building an airplane and flying it at the same time."
+            </blockquote>
+            
+            <p>Traditional software development hides the mess. We show it all:</p>
+            <ul>
+                <li><strong>Transparent development:</strong> Every sprint, every tool, every lesson learned is public</li>
+                <li><strong>AI-first approach:</strong> AI agents build AI platform (dogfooding our own future)</li>
+                <li><strong>Responsible AI:</strong> Following Canada's guidelines, not just marketing claims</li>
+                <li><strong>Open source governance:</strong> Segregation of duties, quality gates, audit trails</li>
+                <li><strong>Enterprise-grade from day one:</strong> Security, accessibility, compliance built-in</li>
+            </ul>
+            
+            <p>This is not vaporware. This is not a black-box demo. This is <strong>real AI development, in public, in real-time</strong>.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Marco Presta | <a href="https://github.com/MarcoPolo483" target="_blank">GitHub Organization</a></p>
+        <p>Built with transparency. Powered by AI agents. Governed by Canada's Responsible AI Guidelines.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Last Updated: November 17, 2025</p>
+    </footer>
+</body>
+</html>
