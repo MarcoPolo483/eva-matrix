@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVA 2.0 Command Matrix</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #00d4aa, #00a3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #888;
+    }
+
+    .timestamp {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 212, 170, 0.2);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00d4aa;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00d4aa;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-planning {
+      background: rgba(255, 193, 7, 0.2);
+      color: #ffc107;
+    }
+
+    .status-active {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4caf50;
+    }
+
+    .status-complete {
+      background: rgba(33, 150, 243, 0.2);
+      color: #2196f3;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d4aa, #00a3ff);
+      transition: width 0.3s ease;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 3rem;
+    }
+
+    .footer a {
+      color: #00d4aa;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #333;
+      }
+      
+      .card {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      
+      h1 {
+        -webkit-text-fill-color: #00a3ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 EVA 2.0 Command Matrix</h1>
+      <p class="subtitle">Real-Time Agile Dashboard</p>
+      <p class="timestamp">Last Updated: November 19, 2025 at 02:30 PM</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2 class="card-title">Current Sprint</h2>
+        <div class="metric">
+          <span class="metric-label">Sprint 4</span>
+          <span class="status-badge status-active">Active</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Story Points</span>
+          <span class="metric-value">148 SP</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Tasks</span>
+          <span class="metric-value">18</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 6%"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Team Velocity</h2>
+        <div class="metric">
+          <span class="metric-label">Current Sprint</span>
+          <span class="metric-value">35 SP</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Target</span>
+          <span class="metric-value">30 SP</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Ahead/Behind</span>
+          <span class="metric-value" style="color: #4caf50">+14 days</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Quality Metrics</h2>
+        <div class="metric">
+          <span class="metric-label">Test Coverage</span>
+          <span class="metric-value">81.55%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Blockers</span>
+          <span class="metric-value" style="color: #4caf50">0</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Build Status</span>
+          <span class="status-badge status-complete">✅ Passing</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Roadmap</h2>
+        <div class="metric">
+          <span class="metric-label">Days to Go-Live</span>
+          <span class="metric-value">407</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Repos Complete</span>
+          <span class="metric-value">3/17</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Overall Progress</span>
+          <span class="metric-value">7%</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <a href="https://github.com/MarcoPolo483/eva-orchestrator" target="_blank">📦 EVA Orchestrator</a>
+      <a href="https://github.com/MarcoPolo483/eva-orchestrator/blob/main/MARCO-HUB.md" target="_blank">🎯 Marco's Hub</a>
+      <a href="https://github.com/MarcoPolo483/eva-orchestrator/projects/1" target="_blank">📊 Project Board</a>
+      <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+        Building an airplane while flying it 🚀 | Updates every 6 hours
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-refresh every 6 hours
+    setTimeout(() => {
+      location.reload();
+    }, 6 * 60 * 60 * 1000);
+  </script>
+</body>
+</html>
